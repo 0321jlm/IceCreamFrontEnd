@@ -1,0 +1,93 @@
+import React from "react";
+import Input from "./Input.js";
+import Axios from "axios";
+
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: "",
+      blogEntry: "",
+      author: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.id]: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    if (this.props.blog) {
+      this.props.handleSubmit(event, {
+        category: this.state.category,
+        blogEntry: this.state.blogEntry,
+        author: this.state.author,
+        id: this.props.blog.id
+      });
+      this.props.toggleForm();
+    } else {
+      this.props.handleSubmit(event, {
+        category: this.state.category,
+        blogEntry: this.state.blogEntry,
+        author: this.state.author
+      });
+    }
+
+    this.setState({
+      category: "",
+      blogEntry: "",
+      author: ""
+    });
+  }
+
+  componentDidMount() {
+    if (this.props.notice) {
+      this.setState({
+        category: this.props.blog.category || "",
+        blogEntry: this.props.blog.blogEntry || "",
+        author: this.props.blog.author || "",
+        id: this.props.blog.id || ""
+      });
+    }
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <Input
+          handleChange={this.handleChange}
+          name={"category"}
+          placeholder={"Blog Category"}
+          type={"text"}
+          value={this.state.category}
+          id={"category"}
+        />
+        <Input
+          handleChange={this.handleChange}
+          name={"blogEntry"}
+          placeholder={"Blog Entry"}
+          type={"text"}
+          value={this.state.blogEntry}
+          id={"blogEntry"}
+        />
+        <Input
+          handleChange={this.handleChange}
+          name={"author"}
+          placeholder={"Blog Author"}
+          type={"text"}
+          value={this.state.author}
+          id={"author"}
+        />
+        <input
+          type="submit"
+          value={this.props.blog ? "update this entry" : "add a blog"}
+        />
+      </form>
+    );
+  }
+}
+
+export default Form;
