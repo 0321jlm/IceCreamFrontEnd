@@ -4,7 +4,7 @@ import Form from "./Form.js";
 function Aside(props) {
   return (
     <aside>
-      <h1>Aside</h1>
+      <h1>New Entries</h1>
       <Form handleSubmit={props.handleSubmit} />
     </aside>
   );

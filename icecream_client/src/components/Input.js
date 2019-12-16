@@ -1,13 +1,13 @@
 import React from "react";
 
 const Input = props => {
-  const { handleChange, name, placeholder, title, type, value } = props;
+  const { handleChange, category, placeholder, blogEntry, type, value } = props;
   return (
     <>
-      <label htmlFor={name}>{title}</label>
+      <label htmlFor={category}>{blogEntry}</label>
       <input
-        id={name}
-        name={name}
+        id={category}
+        name={category}
         type={type}
         value={value}
         onChange={handleChange}

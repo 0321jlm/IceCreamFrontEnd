@@ -28,8 +28,10 @@ class Blog extends React.Component {
           <div className="notice">
             <h3>{blog.category}</h3>
             <p>{blog.blogEntry}</p>
-            <small>{blog.author}</small>
-            <button onClick={() => handleDelete(blog)}>X</button>
+            <small>{blog.author} </small>
+            <button onClick={() => handleDelete(blog)} type="button">
+              Delete
+            </button>
             <button onClick={this.toggleForm}>Edit this Entry</button>
           </div>
         )}

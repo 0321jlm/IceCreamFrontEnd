@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "./Input.js";
-import Axios from "axios";
+import axios from "axios";
 
 class Form extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class Form extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleChange(event) {
@@ -44,7 +45,7 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.notice) {
+    if (this.props.blog) {
       this.setState({
         category: this.props.blog.category || "",
         blogEntry: this.props.blog.blogEntry || "",
@@ -52,6 +53,13 @@ class Form extends React.Component {
         id: this.props.blog.id || ""
       });
     }
+  }
+
+  async handleUpdate(event, formInputs) {
+    event.preventDefault();
+    console.log("updating");
+    await axios.put(`/blogs/${formInputs.id}`, formInputs);
+    this.getBlogs();
   }
 
   render() {
@@ -83,7 +91,7 @@ class Form extends React.Component {
         />
         <input
           type="submit"
-          value={this.props.blog ? "update this entry" : "add a blog"}
+          value={this.props.blog ? "update this entry" : "add an entry"}
         />
       </form>
     );
