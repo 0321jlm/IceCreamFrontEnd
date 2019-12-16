@@ -21,6 +21,17 @@ function Nav(props) {
       >
         Holiday Gift Guide 2019
       </a>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1>My Favorite Ice Cream Shops</h1>
+      <a href="https://peachesncreamicecream.com/index.html" target="_blank">
+        Peaches and Cream
+      </a>
+      <br></br>
+      <a href="https://www.arethusafarm.com/" target="_blank">
+        Arethusa Farm
+      </a>
     </nav>
   );
 }
