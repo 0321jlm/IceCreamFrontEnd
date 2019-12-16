@@ -29,10 +29,16 @@ class Blog extends React.Component {
             <h3>{blog.category}</h3>
             <p>{blog.blogEntry}</p>
             <small>{blog.author} </small>
-            <button onClick={() => handleDelete(blog)} type="button">
+            <button
+              id="delete"
+              onClick={() => handleDelete(blog)}
+              type="button"
+            >
               Delete
             </button>
-            <button onClick={this.toggleForm}>Edit this Entry</button>
+            <button id="edit" onClick={this.toggleForm}>
+              Edit this Entry
+            </button>
           </div>
         )}
       </>

@@ -84,6 +84,16 @@ body {
   margin: 0;
 }
 
+#delete {
+  background-color: red;
+  color: white;
+}
+
+#edit {
+  background-color: green;
+  color: white;
+}
+
 @media (max-width: 768px) {
   .container {
     grid-template-areas:
