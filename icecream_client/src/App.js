@@ -24,12 +24,14 @@ class App extends React.Component {
 
   async handleAdd(event, formInputs) {
     event.preventDefault();
-    await axios.post("/blogs", formInputs);
+    await axios.post("https://icecreamblog.herokuapp.com/blogs", formInputs);
     this.getBlogs();
   }
 
   async handleDelete(deletedBlog) {
-    await axios.delete(`/blogs/${deletedBlog.id}`);
+    await axios.delete(
+      `https://icecreamblog.herokuapp.com/blogs/${deletedBlog.id}`
+    );
     this.getBlogs();
   }
 
@@ -38,7 +40,7 @@ class App extends React.Component {
   }
 
   async getBlogs() {
-    const response = await axios("/blogs");
+    const response = await axios("https://icecreamblog.herokuapp.com/blogs");
     console.log(response);
     const data = response.data;
     this.setState({
@@ -49,7 +51,10 @@ class App extends React.Component {
   async handleUpdate(event, formInputs) {
     event.preventDefault();
     console.log("updating");
-    await axios.put(`/blogs/${formInputs.id}`, formInputs);
+    await axios.put(
+      `https://icecreamblog.herokuapp.com/blogs/${formInputs.id}`,
+      formInputs
+    );
     this.getBlogs();
   }
   render() {

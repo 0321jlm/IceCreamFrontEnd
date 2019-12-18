@@ -68,7 +68,7 @@ class Form extends React.Component {
         <Input
           handleChange={this.handleChange}
           name={"category"}
-          placeholder={"Blog Category"}
+          placeholder={"Title"}
           type={"text"}
           value={this.state.category}
           id={"category"}
@@ -76,7 +76,7 @@ class Form extends React.Component {
         <Input
           handleChange={this.handleChange}
           name={"blogEntry"}
-          placeholder={"Blog Entry"}
+          placeholder={"Entry"}
           type={"text"}
           value={this.state.blogEntry}
           id={"blogEntry"}
@@ -84,7 +84,7 @@ class Form extends React.Component {
         <Input
           handleChange={this.handleChange}
           name={"author"}
-          placeholder={"Blog Author"}
+          placeholder={"Author"}
           type={"text"}
           value={this.state.author}
           id={"author"}

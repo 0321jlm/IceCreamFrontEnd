@@ -27,6 +27,7 @@ h1 {
 header {
   grid-area: header;
   background-color: var(--oasis-blue);
+  color: blue;
 }
 
 nav {
@@ -34,12 +35,14 @@ nav {
   margin-left: 0.5rem;
   background-color: var(--oasis-green);
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/da/Strawberry_ice_cream_cone_%285076899310%29.jpg");
+  color: blue;
 }
 
 main {
   grid-area: content;
   background-color: var(--sandy);
   background-image: url("https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/dairyreporter.com/news/manufacturers/entries-for-the-uk-national-ice-cream-competition-open/10452930-1-eng-GB/Entries-for-the-UK-National-Ice-Cream-Competition-open_wrbm_large.jpg");
+  color: blue;
 }
 
 aside {
@@ -47,6 +50,7 @@ aside {
   margin-right: 0.5rem;
   background-color: var(--oasis-green);
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/da/Strawberry_ice_cream_cone_%285076899310%29.jpg");
+  color: blue;
 }
 
 footer {
